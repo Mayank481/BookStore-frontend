@@ -6,11 +6,11 @@ import { API_REGUSER } from "../config";
 
 export default function SignUp() {
   const [inputs, setInputs] = useState({
-    userFirstName: "",
-    userLastName: "",
+    userFullName: "",
+    userAge: "",
     userEmail: "",
     userPassword: "",
-    userPhoneNumber: "",
+    userDateOfBirth: "",
   });
 
   const OnInputChange = (e) => {
@@ -18,19 +18,19 @@ export default function SignUp() {
   };
   const onSubmit = async () => {
     if (
-      inputs.userFirstName === "" &&
-      inputs.userLastName === "" &&
+      inputs.userFullName === "" &&
+      inputs.userAge === "" &&
       inputs.userEmail === "" &&
       inputs.userPassword === "" &&
-      inputs.userPhoneNumber === ""
+      inputs.userDateOfBirth === ""
     ) {
       toast.warning("Please Enter Require Field");
     } else if (
-      inputs.userFirstName === "" ||
-      inputs.userLastName === "" ||
+      inputs.userFullName === "" ||
+      inputs.userAge === "" ||
       inputs.userEmail === "" ||
       inputs.userPassword === "" ||
-      inputs.userPhoneNumber === ""
+      inputs.userDateOfBirth === ""
     ) {
       toast.warning("Specific feild left please provide");
     } else {
@@ -38,11 +38,11 @@ export default function SignUp() {
         toast.success("Registration Successfully");
       });
       setInputs({
-        userFirstName: "",
-        userLastName: "",
+        userFullName: "",
+        userAge: "",
         userEmail: "",
         userPassword: "",
-        userPhoneNumber: "",
+        userDateOfBirth: "",
       });
     }
   };
@@ -55,26 +55,26 @@ export default function SignUp() {
         <div className="container bg-white mt-5 p-5 shadow-lg bg-body rounded">
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              FirstName
+              FullName
             </label>
             <input
               type="text"
               className="form-control"
               onChange={(e) => OnInputChange(e)}
-              name="userFirstName"
-              value={inputs.userFirstName}
+              name="userFullName"
+              value={inputs.userFullName}
             />
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              LastName
+              Age
             </label>
             <input
               type="text"
               className="form-control"
               onChange={(e) => OnInputChange(e)}
-              name="userLastName"
-              value={inputs.userLastName}
+              name="userAge"
+              value={inputs.userAge}
             />
           </div>
 
@@ -107,14 +107,14 @@ export default function SignUp() {
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              PhoneNumber
+              DateOfBirth
             </label>
             <input
-              type="text"
+              type="date"
               className="form-control"
               onChange={(e) => OnInputChange(e)}
-              name="userPhoneNumber"
-              value={inputs.userPhoneNumber}
+              name="userDateOfBirth"
+              value={inputs.userDateOfBirth}
             />
           </div>
           <button type="submit" className="btn btn-primary" onClick={onSubmit}>

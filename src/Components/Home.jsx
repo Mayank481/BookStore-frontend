@@ -39,7 +39,15 @@ export default function Home() {
                         </h5>
                         <h5 className="card-title">
                           <span className="fw-bold">Name of Author:- </span>
-                          {`${element.Author.FirstName} ${element.Author.LastName}`}
+                          {`${element.Author.FullName}`}
+                        </h5>
+                        <h5 className="card-title">
+                          <span className="fw-bold">Price:- </span>
+                          {`${element.PRICE}`}
+                        </h5>
+                        <h5 className="card-title">
+                          <span className="fw-bold">Public ON:- </span>
+                          {`${element.PUBLISHEDON}`}
                         </h5>
                       </div>
                     </div>

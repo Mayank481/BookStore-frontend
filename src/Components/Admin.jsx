@@ -39,16 +39,16 @@ export default function Admin() {
                           {element.Title}
                         </h5>
                         <h5 className="card-title">
-                          <span className="fw-bold">ISBN:- </span>
-                          {element.ISBN}
+                          <span className="fw-bold">PRICE:- </span>
+                          {element.PRICE}
                         </h5>
                         <h5 className="card-title">
-                          <span className="fw-bold">NO. Of pages:- </span>
-                          {element.Pages}
+                          <span className="fw-bold">NO. Of PUBLISHEDON:- </span>
+                          {element.PUBLISHEDON}
                         </h5>
                         <h5 className="card-title">
                           <span className="fw-bold">Name of Author:- </span>
-                          {`${element.Author.FirstName} ${element.Author.LastName}`}
+                          {`${element.Author.FullName}`}
                         </h5>
                         <h5 className="card-title">
                           <span className="fw-bold">Status of Book:- </span>

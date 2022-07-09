@@ -33,7 +33,7 @@ export default function Navbar({ refresh, userdata }) {
                   <i className="fa-solid fa-user fa-2x"></i>
                 </div>
                 <div className="text-white">
-                  {userdata.FirstName + " " + userdata.LastName}
+                  {userdata.FullName}
                 </div>
               </div>
               <div class="d-flex">

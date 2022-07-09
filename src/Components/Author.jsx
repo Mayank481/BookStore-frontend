@@ -11,10 +11,10 @@ export default function Author({ userdata }) {
   const [bookrecord, setbookrecord] = useState([]);
   useEffect(() => {
     singlerecord();
-  }, [refresh]);
+  },[refresh]);
   const [inputs, setInputs] = useState({
     booktittle: "",
-    isbn: "",
+    PRICE: "",
     nop: "",
   });
 
@@ -22,11 +22,11 @@ export default function Author({ userdata }) {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
   const onsubmit = async () => {
-    if (inputs.booktittle === "" && inputs.isbn === "" && inputs.nop === "") {
+    if (inputs.booktittle === "" && inputs.PRICE === "" && inputs.nop === "") {
       toast.warning("Please Enter require feild");
     } else if (
       inputs.booktittle === "" ||
-      inputs.isbn === "" ||
+      inputs.PRICE === "" ||
       inputs.nop === ""
     ) {
       toast.warning("Specific feild require");
@@ -40,7 +40,7 @@ export default function Author({ userdata }) {
           toast.success("Your Book is Publish");
           setInputs({
             booktittle: "",
-            isbn: "",
+            PRICE: "",
             nop: "",
           });
           toggleRefresh();
@@ -92,23 +92,23 @@ export default function Author({ userdata }) {
         </div>
         <div class="mb-3">
           <label htmlFor="exampleInputPassword1" class="form-label">
-            ISBN
+            PRICE
           </label>
           <input
             type="text"
             class="form-control"
             id="exampleInputPassword1"
             onChange={(e) => OnInputChange(e)}
-            name="isbn"
-            value={inputs.isbn}
+            name="PRICE"
+            value={inputs.PRICE}
           />
         </div>
         <div class="mb-3">
           <label htmlFor="exampleInputPassword1" class="form-label">
-            Number of Pages
+            PUBLISHEDON
           </label>
           <input
-            type="text"
+            type="date"
             class="form-control"
             id="exampleInputPassword1"
             onChange={(e) => OnInputChange(e)}
@@ -130,16 +130,16 @@ export default function Author({ userdata }) {
                   <div className="card">
                     <div className="card-body">
                       <h5 className="card-title">
-                        <span className="fw-bold">Title of Book:- </span>
+                        <span className="fw-bold">Name of Book:- </span>
                         {element.Title}
                       </h5>
                       <h5 className="card-title">
-                        <span className="fw-bold">ISBN:- </span>
-                        {element.ISBN}
+                        <span className="fw-bold">PRICE:- </span>
+                        {element.PRICE}
                       </h5>
                       <h5 className="card-title">
-                        <span className="fw-bold">NO. Of pages:- </span>
-                        {element.Pages}
+                        <span className="fw-bold">PUBLISHEDON:- </span>
+                        {element.PUBLISHEDON}
                       </h5>
                       <h5 className="card-title">
                         <span className="fw-bold">Status of Book:- </span>
