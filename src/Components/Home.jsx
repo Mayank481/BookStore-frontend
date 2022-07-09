@@ -4,9 +4,11 @@ import { API_GETALLBOOK } from "../config";
 
 export default function Home() {
   const [book, setbook] = useState([]);
+  const [refresh, setRefresh] = useState(true);
+  const toggleRefresh = () => setRefresh((p) => !p);
   useEffect(() => {
     loadbooks();
-  }, []);
+  }, [refresh]);
   const loadbooks = async () => {
     await axios.get(API_GETALLBOOK).then((res) => {
       setbook(
@@ -14,6 +16,7 @@ export default function Home() {
           return element.Status === "approve" && element.View === "Public";
         })
       );
+      toggleRefresh();
     });
   };
   return (

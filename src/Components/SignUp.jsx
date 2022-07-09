@@ -54,25 +54,27 @@ export default function SignUp() {
       >
         <div className="container bg-white mt-5 p-5 shadow-lg bg-body rounded">
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputName" className="form-label">
               FullName
             </label>
             <input
               type="text"
               className="form-control"
               onChange={(e) => OnInputChange(e)}
+              placeholder='Enter your FullName'
               name="userFullName"
               value={inputs.userFullName}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputText" className="form-label">
               Age
             </label>
             <input
               type="text"
               className="form-control"
               onChange={(e) => OnInputChange(e)}
+              placeholder= 'Enter your Age'
               name="userAge"
               value={inputs.userAge}
             />
@@ -88,6 +90,7 @@ export default function SignUp() {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               onChange={(e) => OnInputChange(e)}
+              placeholder = "Enter your Email Address"
               name="userEmail"
               value={inputs.userEmail}
             />
@@ -101,18 +104,20 @@ export default function SignUp() {
               className="form-control"
               id="exampleInputPassword1"
               onChange={(e) => OnInputChange(e)}
+              placeholder = "Enter Your Password"
               name="userPassword"
               value={inputs.userPassword}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputDate" className="form-label">
               DateOfBirth
             </label>
             <input
               type="date"
               className="form-control"
               onChange={(e) => OnInputChange(e)}
+              placeholder="Enter your Date of Birth"
               name="userDateOfBirth"
               value={inputs.userDateOfBirth}
             />

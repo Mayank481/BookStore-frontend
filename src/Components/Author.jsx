@@ -80,32 +80,34 @@ export default function Author({ userdata }) {
       <div className="container position-relative bg-white p-5 mt-5">
         <div class="mb-3">
           <label htmlFor="exampleInputEmail1" class="form-label">
-            BOOK TITTLE
+            Name of Book
           </label>
           <input
             type="text"
             class="form-control"
             onChange={(e) => OnInputChange(e)}
+            placeholder = "Name of Book"
             name="booktittle"
             value={inputs.booktittle}
           />
         </div>
         <div class="mb-3">
           <label htmlFor="exampleInputPassword1" class="form-label">
-            PRICE
+            Price
           </label>
           <input
             type="text"
             class="form-control"
             id="exampleInputPassword1"
             onChange={(e) => OnInputChange(e)}
+            placeholder = "Price of Book in Rupees"
             name="PRICE"
             value={inputs.PRICE}
           />
         </div>
         <div class="mb-3">
           <label htmlFor="exampleInputPassword1" class="form-label">
-            PUBLISHEDON
+            Publish ON
           </label>
           <input
             type="date"
@@ -134,11 +136,11 @@ export default function Author({ userdata }) {
                         {element.Title}
                       </h5>
                       <h5 className="card-title">
-                        <span className="fw-bold">PRICE:- </span>
+                        <span className="fw-bold">Price:- </span>
                         {element.PRICE}
                       </h5>
                       <h5 className="card-title">
-                        <span className="fw-bold">PUBLISHEDON:- </span>
+                        <span className="fw-bold">Publish ON:- </span>
                         {element.PUBLISHEDON}
                       </h5>
                       <h5 className="card-title">

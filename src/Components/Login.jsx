@@ -7,7 +7,7 @@ import { API_LOGINUSER } from "../config";
 
 export default function Login({ loadUser }) {
   const navigate = useNavigate();
-  const [data, setdata] = useState(null);
+  // const [data, setdata] = useState(null);
   const [inputs, setInputs] = useState({
     userEmail: "",
     userPassword: "",
@@ -22,8 +22,7 @@ export default function Login({ loadUser }) {
         username: inputs.userEmail,
         password: inputs.userPassword,
       })
-      .then((res) => {
-        console.log(res);
+      .then((res) => {        
         loadUser();
         navigate("/");
       })
@@ -55,6 +54,7 @@ export default function Login({ loadUser }) {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               onChange={(e) => OnInputChange(e)}
+              placeholder = "Enter Your Email Address"
               name="userEmail"
               value={inputs.userEmail}
             />
@@ -68,6 +68,7 @@ export default function Login({ loadUser }) {
               className="form-control"
               id="exampleInputPassword1"
               onChange={(e) => OnInputChange(e)}
+              placeholder = "Enter your Password"
               name="userPassword"
               value={inputs.userPassword}
             />

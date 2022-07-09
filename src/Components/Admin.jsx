@@ -39,11 +39,11 @@ export default function Admin() {
                           {element.Title}
                         </h5>
                         <h5 className="card-title">
-                          <span className="fw-bold">PRICE:- </span>
+                          <span className="fw-bold">Price:- </span>
                           {element.PRICE}
                         </h5>
                         <h5 className="card-title">
-                          <span className="fw-bold">NO. Of PUBLISHEDON:- </span>
+                          <span className="fw-bold">Publish ON:- </span>
                           {element.PUBLISHEDON}
                         </h5>
                         <h5 className="card-title">
