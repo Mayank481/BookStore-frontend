@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { API_PUBLISHBOOK, API_SINGLEBOOK, API_VIEWPRIVECY } from "../config";
+import { API_PUBLISHBOOK, API_SINGLEBOOK, API_VIEWPRIVECY, API_DELETEPOST } from "../config";
 
 export default function Author({ userdata }) {
   const [refresh, setRefresh] = useState(true);
@@ -56,6 +56,13 @@ export default function Author({ userdata }) {
         setbookrecord(res.data);
       });
   };
+  const deletebook = async (element) => {
+    await axios.post(API_DELETEPOST,element)
+    .then((res) => {
+      toast.success("Delete your book");
+      toggleRefresh();
+    })        
+  }
   const View = async (element) => {
     const privacy = document.getElementById("privacy");
     const value = privacy.options[privacy.selectedIndex].value;
@@ -65,14 +72,14 @@ export default function Author({ userdata }) {
         data: element._id,
       })
       .then((res) => {
-        alert("Your Privacy is Changed");
+        toast.success("Your Privacy is Changed");        
       });
   };
   return (
     <>
       <div className="container position-relative bg-white p-5 mt-5">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
+          <label htmlFor="exampleInputEmail1" class="form-label">
             BOOK TITTLE
           </label>
           <input
@@ -84,7 +91,7 @@ export default function Author({ userdata }) {
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
+          <label htmlFor="exampleInputPassword1" class="form-label">
             ISBN
           </label>
           <input
@@ -97,7 +104,7 @@ export default function Author({ userdata }) {
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
+          <label htmlFor="exampleInputPassword1" class="form-label">
             Number of Pages
           </label>
           <input
@@ -138,6 +145,9 @@ export default function Author({ userdata }) {
                         <span className="fw-bold">Status of Book:- </span>
                         {element.Status}
                       </h5>
+                      <button className="btn btn-danger mb-2">
+                        <span className="fw-bold" onClick={() => {deletebook(element)}}>Delete</span>                        
+                      </button>
                       <select
                         class="form-select"
                         aria-label="Default select example"

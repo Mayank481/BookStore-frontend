@@ -16,8 +16,7 @@ function App() {
   const [refresh, setRefresh] = useState(true);
   const [userdata,setuserdata] = useState({});
 
-  useEffect(()=>{
-    console.log(process.env.REACT_APP_ADMIN_EMAIL);
+  useEffect(()=>{    
     loadUser();
   },[refresh])
   const loadUser = async()=>{

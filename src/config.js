@@ -9,3 +9,4 @@ export const API_VIEWPRIVECY = `${API_URL}book/privacy`;
 export const API_LOGINUSER = `${API_URL}auth/login`;
 export const API_LOGOUTUSER = `${API_URL}auth/logout`;
 export const API_REGUSER = `${API_URL}users/register`;
+export const API_DELETEPOST = `${API_URL}book/deletebook`
